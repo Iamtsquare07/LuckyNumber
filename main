@@ -1,0 +1,9 @@
+<div class="algoProgram"><h2 style="font-size: x-large;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Winner Predictor App</h2>
+                  <p class="data-box"><label for="tickets"> Total Tickets:  </label> <input type="number" id="ticketNo" value="50" required><input type="button" onclick="processGenerator()" id="startAI" value="GO"></p>
+                  <div id="main">
+                    <div id="root">
+                        <h2 id="success"></h2>
+                        <div id="body"></div>
+                    </div>
+                </div>
+                </div>
