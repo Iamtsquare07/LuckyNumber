@@ -1,61 +1,6 @@
 <html>
 <head><title>We Buy Lucky Number</title></head>
-<style>
-.algoProgram {
-    margin: auto;
-  background-color: indigo;
-  padding: 20px;
-  padding-top: 5px;
-  border-radius: 5px;
-  font-size: large;
-  width: 100%;
-}
-
-.data-box {
-  margin-top: 100px;
-  padding: 10;
-  font-size: medium;
-}
-#ticketNo {
-  border-radius: 3px;
-  padding: 2px;
-    border: none;
-    background: transparent;
-    box-shadow: 0.5px 0.3px 1px 2px #7f828b;
-    margin-right: 5px;
-    color: white;
-    font-weight: 400;
-}
-#startAI {
-  background-color: goldenrod;
-  border-radius: 5px;
-  color: white;
-  padding: 2px;
-  cursor: pointer;
-}
-#main {
-    text-align: center;
-    background-color: black;
-    color: white;
-    font-weight: 800;
-    padding-top: 50px;
-    padding: 5px;
-    margin-top: 5px;
-    height: 250px;
-    border-radius: 15px;
-    margin-bottom: 30px;
-}
-
-#root {
-    font-variant: small-caps;
-    color: goldenrod;
-    font-size: large;
-}
-#body {
-    color: white;
-    font-size: xx-large;
-}
-</style>
+<link rel="stylesheet" href="./style.css" >
 <body>
     <div class="algoProgram"><h2 style="font-size: x-large;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Winner Predictor App</h2>
         <p class="data-box"><label for="tickets"> Total Tickets:  </label> <input type="number" id="ticketNo" value="50" required><input type="button" onclick="processGenerator()" id="startAI" value="GO"></p>
@@ -66,51 +11,6 @@
           </div>
       </div>
       </div>
-<script>
-// Start of generate number algorithm
-let programbox = document.querySelector("#main")
-let programBody = document.querySelector("#body");
-let successMessage = document.querySelector("#success");
-let loadImage = "https://www.sonscores.com/wp-content/uploads/2021/09/sonscore-load.gif";
-const startGen = document.querySelector("#startAI");
-const ticketNumber = document.querySelector("#ticketNo");
-
-var processGenerator = (ai) => {
-  programBody.innerHTML = "";
-successMessage.innerHTML = "Initializing...";
-const gererateNumber = (val) => {
-  return Math.floor(Math.random() * val)+1;
-}
-var loadCountdown = "https://i.pinimg.com/originals/ae/b0/11/aeb01108d342546c1970615ecd2da754.gif";
-  if (Number(ticketNumber.value) === 0){
-    successMessage.innerHTML = "Invalid number of Tickets, enter a number.";
-    ticketNumber.focus();
-  }else if (ticketNumber.value === ""){
-    successMessage.innerHTML = "Please enter total ticket number";
-    ticketNumber.focus();
-  }else if (Number(ticketNumber.value) === 1) {
-    successMessage.innerHTML = "1 ticket is not enough, add more tickets and run app again.";
-    ticketNumber.focus();
-  }else {
-    setTimeout(() => {
-  successMessage.innerHTML = "Hang on! processing...";
-  programBody.innerHTML = `<img src="${loadImage}" width="50px" height="50px">`;
-  setTimeout(() => {
-    setTimeout(() => {
-      let totalTickets = ticketNumber.value;
-      programBody.innerHTML = `Winner is Number: <span style="color:gold">${gererateNumber(totalTickets)}</span>
-      <br><p>Congratulations!</p>`;
-    successMessage.innerHTML = `Successful!`;
-    }, 4000);
-    programBody.innerHTML = `<img src="${loadCountdown}" width="50px" height="50px">`;
-    successMessage.innerHTML = "Generating!";
-  }, 8000)
-}, 2000)
-  }
-}
-ticketNumber.addEventListener('keypress', function (e) {
-if (e.key === 'Enter') processGenerator();
-}); 
-</script>
+<script src="./app.js"></script>
 </body>
 </html>
